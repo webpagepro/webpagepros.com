@@ -1,0 +1,21 @@
+Allow *
+Dissallow
+
+User-agent: *
+Disallow: /images/
+
+
+User-agent: *
+Disallow: /css/
+
+
+User-agent: *
+Disallow: /old_site/
+
+
+User-agent: *
+Disallow: /--css/
+
+
+User-agent: *
+Disallow: /_css/
