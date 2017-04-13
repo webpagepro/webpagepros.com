@@ -12,7 +12,8 @@ header{background-color:#cccc99; border-color: #ccc; border-style:solid; border-
 
 
 .name{display: flex; flex-direction:row; justify-content:flex-start;
-    font-family: 'Marvel', sans-serif; font-size:2em; font-weight:bold;-webkit-flex-wrap:nowrap; flex-wrap:nowrap;  order:2;
+    font-family: 'Marvel', sans-serif; font-size:2em; font-weight:bold;-webkit-flex-wrap:nowrap; flex-wrap:nowrap; 
+    -webkit-flex: 1 0 0; flex: 1 0 0; order:2;
 }
 
 .logo{order:1; justify-content:flex-start;}
