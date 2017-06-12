@@ -5,50 +5,55 @@ body{margin:5px;}
 /* Flex Container */
 header, main, footer{display: -webkit-flex;	display: flex;
   	-webkit-flex-direction: row; flex-direction: row;
-    justify-content: space-between; justify-content: space-around;
+justify-content: space-between; -webkit-justify-content: space-between;
 }
 
 /* Flex container children properties */
-header{background-color:#cccc99; border-color: #ccc; border-style:solid; border-radius: 7px; height:100%; max-width:100%;}
+header{background-color:#cccc99; border-color: #ccc; border-style:solid; border-radius: 7px;}
 
 .name{ font-family: 'Marvel', sans-serif; font-size:2em; font-weight:bold; order:2;  -webkit-flex: 1 0 0; flex: 1 0 0;margin:auto; }
 
  .logo{order:1; justify-content:flex-start; min-width: 60%;}
- .images{display:flex; flex-direction: row; -webkit-flex-direction: row;  -webkit-justify-content: flex-end;  justify-content: flex-end; order:3;
- }
-.images2{display:none }
+ .images{ order:3; }
+
+ /* Side Nav */
+.side_nav {display: flex; flex-direction:column; justify-content: space-between; justify-content: space-around; align-items: center;}
+
 
 /* Flex navigation menu */
 .navbar{margin:0;}
-nav ul{margin-left:0;display: -webkit-flex;	display: flex; -webkit-flex-direction: row; flex-direction: row; width:98%; padding:5px;}
+nav ul{margin-left:0;display: -webkit-flex;	display: flex; -webkit-flex-direction: row; flex-direction: row; width:98%; }
 nav ul a li{ list-style:none;font-family: 'Patua One', cursive;  text-decoration:none;}
 nav ul a{text-decoration:none;color:#fff; font-family: 'Patua One', cursive;  justify-content: space-around; margin:auto;}
 nav ul a:hover{ color:#f00;  }
 nav #menu-toggle {display: none;}
 nav .label-toggle {display: none;}
 
-/* Side nav */
-
-
 /* Content properties */
 section h2 {display:flex; flex-direction:row; padding:5px;}
-aside { align-items:flex-start; flex-basis:10%; width:100px; -webkit-flex-direction: row; max-width:150px; flex-direction: column; background-color: #cccc99; border-color: #ccc; border-style:solid; border-radius: 7px; text-align:center; flex: 1 0 0;}
+aside .side_nav { align-items:flex-start; flex-basis:10%; width:100px; max-width:150px; flex-direction: column;flex-direction: column; background-color: #cccc99; border-color: #ccc; border-style:solid; border-radius: 7px; text-align:center; flex: 1 0 0;justify-content: space-between; justify-content: space-around; align-items: center; }
 
 section{padding:5px;  background-color:#fff;  margin:5px; border-radius:5px; -webkit-flex: 2 0 0; flex: 2 0 0;}
  h2{font-family: 'Patua One', cursive; font-size:1.2em;font-weight:bold;}
- p{font-family: 'Comfortaa', cursive;padding:4px;}
+ section p{font-family: 'Nunito', serif; padding:4px; color:#000;line-height:24px;}
  
 /* Youtube video container */
 iframe{width:100%; height:350px;}
 
 /* Footer*/
 footer { color:#000;background-color:#cccc99;  padding:15px; flex-direction: row;     font-family: 'Patua One', sans-serif;  border-radius: 7px;font-size:.9em; margin-top:15px;  }
-.copyright{justify-content:flex-end; -webkit-justify-content: flex-end;}
+
+footer{  webkit-align-items: flex-end;
+        align-items: flex-end; justify-content:flex-end; -webkit-justify-content: flex-end; font-size:.8em;
+          }
+
+ .copyright
+header {align-items:flex-end;  justify-content:flex-end; -webkit-justify-content: flex-end;}
 
 /* Media Queries */
-  @media (max-width: 352px)
+  @media (max-width: 422px)
  {
-      header,main, footer{
+      header, main, footer{
        -webkit-flex-direction: row;  flex-direction: row;
     }
 
@@ -56,7 +61,9 @@ footer { color:#000;background-color:#cccc99;  padding:15px; flex-direction: row
     aside{display:none;}
     iframe{width:100%;}
     .logo img{width:100%;}
-    .images img{width:100%;}
+    .images img{display:none; }
+
+
 }
 
 
@@ -68,8 +75,10 @@ footer { color:#000;background-color:#cccc99;  padding:15px; flex-direction: row
         flex-direction: column;
         -webkit-align-items: flex-start;
         align-items: flex-start;
-
-    }
+}
+aside .side_nav {
+    display:none;
+}
 
     nav ul {
         background-color: #E84545;
@@ -84,6 +93,9 @@ footer { color:#000;background-color:#cccc99;  padding:15px; flex-direction: row
         justify-content: flex-start;
         -webkit-justify-content: flex-start;
         border-radius: 5px;
+	margin:5px;
+	width:90%;
+	padding:5px; 
     }
 
     nav li {
@@ -93,7 +105,10 @@ footer { color:#000;background-color:#cccc99;  padding:15px; flex-direction: row
         flex-direction: column;
         font-size: 1.2em;
         padding: 2em 0;
-        width: 100%
+        width: 100%;
+          -webkit-align-items: center;
+        align-items: center;
+
     }
 
     nav ul a li:hover {
@@ -119,7 +134,7 @@ footer { color:#000;background-color:#cccc99;  padding:15px; flex-direction: row
     }
 
     nav .wrapper {
-        display: flex;
+        display: block;
         flex-direction: column;
         -webkit-flex-direction: column;
         align-items: flex-end;
@@ -127,12 +142,10 @@ footer { color:#000;background-color:#cccc99;  padding:15px; flex-direction: row
         margin-top: 5px;
     }
 
-    aside {
-        display: none;
-    }
+    aside .side_nav, .side_nav img {display: none;  }
 
     .images {
-        height: 80px;
+      
         margin: auto;
     }
 
@@ -146,4 +159,28 @@ footer { color:#000;background-color:#cccc99;  padding:15px; flex-direction: row
         align-items: center;
         margin: auto;
     }
+footer{  webkit-align-items: flex-end;
+        align-items: flex-end; justify-content:flex-end; -webkit-justify-content: flex-end; font-size:.8em;
+          }
+ .copyright{ font-size:.8em;-}
+
 }
+
+input {
+       display: flex;
+}
+
+.resume{height:600px;width:95%;}
+
+object{width:100%;height:auto;}
+
+#mainContainer{height:500px;}
+
+.viewerContainer{height:600px;}
+section{width:100%;}
+
+section p a:link{font-size:1.1em; font-weight:600;color:orange;text-decoration:none;font-family:Marvel; letter-spacing:3px;margin-left:10%;}
+section p a:hover{color:red;}
+section p a:active{color:#0f0437;}
+section p a:after{color:#ccc;}
+h4.title {border-radius:7px; background-color:#0f0437; padding:8px;color:#cccc99; width:80%;padding-left:5%; }
