@@ -5,9 +5,9 @@
 {
 
 private $server = 'localhost';
-private $user = 'phxcrimi_assets';
-private $pass = 'P@ssw0rd';
-private $dbase = 'phxcrimi_inventory';
+private $user = '';
+private $pass = '';
+private $dbase = '';
 private $adb;
       public $error_message;
     //  public $error_message  = '../../errors/db_error_connect.php';
