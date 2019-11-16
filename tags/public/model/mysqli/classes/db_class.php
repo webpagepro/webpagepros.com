@@ -5,9 +5,9 @@ class Database
 {
     // server info
 private $server = 'localhost';
-private $user = 'phxcrimi_assets';
-private $pass = 'P@ssw0rd';
-private $dbase = 'phxcrimi_inventory';
+private $user = '';
+private $pass = '';
+private $dbase = '';
 
 private $sql; 
 
